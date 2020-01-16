@@ -40,3 +40,78 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//adding nav contents a
+const navigation = document.querySelector("nav");
+const navLinks = document.querySelectorAll("a");
+const navArray = Array.from(navLinks);
+navLinks.forEach((a, i) => a.textContent = siteContent.nav[`nav-item-${i + 1}`]);
+
+const navColor = document.querySelectorAll('a')
+navColor.forEach( element => {
+  element.style.color = "green"
+})
+
+
+//prepend item in nav
+const home = document.createElement('a')
+home.textContent = "Prepend";
+home.style.color = "green";
+navigation.prepend(home);
+
+//append item in nav
+const blog = document.createElement('a');
+blog.textContent = "Append";
+blog.style.color = "green";
+navigation.append(blog);
+
+const navOdd = document.querySelectorAll('nav')
+navOdd.forEach(ele=>{
+  ele.style.borderBottom='solid 2px #ccc'
+})
+
+
+// adding CTA
+let title=document.querySelector("h1")
+title.textContent=siteContent["cta"]["h1"]
+title.style.color="purple"
+
+let btn=document.querySelector("button")
+btn.textContent=siteContent["cta"]["button"]
+btn.style.fontWeight='bold'
+
+// adding styles to button
+btn.style.background="coral"
+
+let img = document.getElementById("cta-img");
+img.setAttribute('src', siteContent["cta"]["img-src"])
+
+// adding main-content
+const contentH4=document.getElementsByTagName('h4')
+contentH4[0].textContent=siteContent["main-content"]["features-h4"]
+contentH4[1].textContent=siteContent["main-content"]["about-h4"]
+contentH4[2].textContent=siteContent["main-content"]["services-h4"]
+contentH4[3].textContent=siteContent["main-content"]["product-h4"]
+contentH4[4].textContent=siteContent["main-content"]["vision-h4"]
+
+
+
+
+let contentPara=document.getElementsByTagName('p')
+contentPara[0].textContent=siteContent["main-content"]["features-content"]
+contentPara[1].textContent=siteContent["main-content"]["about-content"]
+contentPara[2].textContent=siteContent["main-content"]["services-content"]
+contentPara[3].textContent=siteContent["main-content"]["product-content"]
+contentPara[4].textContent=siteContent["main-content"]["vision-content"]
+// adding contact para
+contentPara[5].textContent=siteContent["contact"]["address"]
+contentPara[6].textContent=siteContent["contact"]["phone"]
+contentPara[7].textContent=siteContent["contact"]["email"]
+contentPara[8].textContent = siteContent["footer"]["copyright"];
+
+
+let Middleimg = document.getElementById("middle-img");
+Middleimg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+
